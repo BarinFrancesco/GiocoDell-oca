@@ -1,0 +1,22 @@
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.exe.config
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.exe
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.pdb
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.AssemblyReference.cache
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.SuggestedBindingRedirects.cache
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell_oca.Form1.resources
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell_oca.Properties.Resources.resources
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.GenerateResource.cache
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.CoreCompileInputs.cache
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.exe
+C:\Users\12999355\Desktop\frabar\IlGiocoDelloca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.pdb
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.exe.config
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.exe
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\bin\Debug\GiocoDell'oca.pdb
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.AssemblyReference.cache
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell_oca.Form1.resources
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell_oca.Properties.Resources.resources
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.GenerateResource.cache
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.csproj.CoreCompileInputs.cache
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.exe
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell'oca.pdb
+G:\FRANCESCO\x scuola\Superiori\Informatica\COMPITI\GiocoDell-oca\GiocoDell'oca\GiocoDell'oca\obj\Debug\GiocoDell_oca.FormNomi.resources
