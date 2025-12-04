@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GiocoDell_oca
 {
-    class Giocatore
+    public class Giocatore
     { 
         public Cella Posizione { get; set; }
         public Cella PosizioneVecchia { get; private set; }
@@ -15,14 +15,19 @@ namespace GiocoDell_oca
         public int StartingIndex { get; set; }
 
         public string Nome { get; private set; }
+        public bool InPrison { get; private set; }
+
+        private int turnifermo;
 
         public Giocatore(string name)
         {
             Nome = name;
+            InPrison = false;
             IndexPosizione = -1;
             StartingIndex = IndexPosizione;
             Posizione = new Cella(0, 0);
             PosizioneVecchia = new Cella(0, 0);
+            turnifermo = 0;
         } 
 
         public void Avanza()
@@ -41,5 +46,21 @@ namespace GiocoDell_oca
             Posizione = player.PosizioneVecchia;
             IndexPosizione = player.StartingIndex;
         }
+
+        public void Changestatus()
+        {
+            InPrison = !InPrison;
+        }
+
+        public bool FermoCasa()
+        {
+            if(turnifermo == 3)
+            {
+                Changestatus();
+            }
+            turnifermo++;
+
+            return InPrison;
+        } 
     }
 }

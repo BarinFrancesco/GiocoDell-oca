@@ -22,7 +22,9 @@ namespace GiocoDell_oca
         Giocatore Giocatore2;
         bool turno;
         public delegate void Avanza(int x);
-        public event Avanza Sequenzadei9;
+        public delegate void ModificaStatoGiocatore(Giocatore player);
+        public event Avanza Ripetimossa;
+        public event ModificaStatoGiocatore ModificaStatoHandler;
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +45,8 @@ namespace GiocoDell_oca
 
             lbl_ActivePlayer.Text = $"é il turno di {Giocatore1.Nome}";
 
-            Sequenzadei9 += MovePlayer;
+            Ripetimossa += MovePlayer;
+            ModificaStatoHandler += ModificaStato;
         }
 
         private void btn_Trow_Dices_Click(object sender, EventArgs e)
@@ -82,20 +85,21 @@ namespace GiocoDell_oca
 
         private async void MovePlayer(int passi)
         {
+            
             btn_Trow_Dices.Enabled = false;
-            Giocatore MovingPlayer;
-            Giocatore Staticplayer;
+            Giocatore MovingPlayer = null;
+            Giocatore Staticplayer = null;
             string img;
             string secondaryimg;
 
-            if (turno)
+            if (turno && !Giocatore1.InPrison)
             {
                 MovingPlayer = Giocatore1;
                 Staticplayer = Giocatore2;
                 img = $@"..\..\..\imgs\Primo_Giocatore.png";
                 secondaryimg = $@"..\..\..\imgs\Secondo_Giocatore.png";
             }
-            else
+            else if(!turno && !Giocatore2.InPrison)
             {
                 MovingPlayer = Giocatore2;
                 Staticplayer = Giocatore1;
@@ -104,6 +108,9 @@ namespace GiocoDell_oca
             }
 
             MovingPlayer.CambiaPosizioneIniziale();
+            MovingPlayer.CambiaPosizioneIniziale();
+
+
             for (int i=0; i<passi; i++)
             {
                 //Allinizio controliamo che la pedina sia nella tabella, se l' è cancelliamo la sua vecchia posizione
@@ -126,7 +133,7 @@ namespace GiocoDell_oca
 
                 MovingPlayer.Avanza();
 
-                //se è il suo ultimo spostamento, quindi effettivamente si ferma su una data cella
+                //se è il suo ultimo spostamento, quindi effettivamente si ferma sulla cella selezionata
                 if (i == passi - 1)
                 {
                     index = MovingPlayer.IndexPosizione;
@@ -141,15 +148,16 @@ namespace GiocoDell_oca
                     if (index == 4 || (index +1)%9==0 || index == 5 || index == 18 
                         || index == 30 || index == 51 || index == 57) // se è sulle caselle speciali si attiva un data causa
                     {
-                        Cellaspeciale(index, passi);
+
+                        Cellaspeciale(index, passi, MovingPlayer);
+
                     } else if(index == Staticplayer.IndexPosizione) //se si ferma su un cella già occupat ale scambia, quindi scambia posizione ed index iniziali della nuova arrivata con la vecchia
                     {
                         Staticplayer.InvertiPosizione(MovingPlayer);
-                        //Staticplayer.Posizione = MovingPlayer.PosizioneVecchia;
-                        //Staticplayer.IndexPosizione = MovingPlayer.StartingIndex;
                         grd_Playground.Rows[Staticplayer.Posizione.Coordinate.y].Cells[Staticplayer.Posizione.Coordinate.x].Value = Image.FromFile(secondaryimg);
                     }
                 }
+
                 //aggiurna visivamente lo spostamento     
                 MovingPlayer.Posizione = Listacelle[MovingPlayer.IndexPosizione];
                 grd_Playground.Rows[MovingPlayer.Posizione.Coordinate.y].Cells[MovingPlayer.Posizione.Coordinate.x].Value = Image.FromFile(img);
@@ -159,22 +167,22 @@ namespace GiocoDell_oca
             btn_Trow_Dices.Enabled = true;
 
             lbl_ActivePlayer.Text = turno ? $"é il turno di {Giocatore2.Nome}" : $"é il turno di {Giocatore1.Nome}";
-                turno = !turno;
+            turno = !turno;
         }
 
 
-        private void Cellaspeciale(int index, int passi)
+        private void Cellaspeciale(int index, int passi, Giocatore player)
         {
             if ((index + 1) % 9 == 0 || index == 4)
             {
-                Sequenzadei9?.Invoke(passi);
+                Ripetimossa?.Invoke(passi);
                 
             }
 
             switch (index)
             {
                 case 5:
-                    Sequenzadei9?.Invoke(passi);
+                    Ripetimossa?.Invoke(passi);
                     break;
 
                 case 18:
@@ -193,6 +201,10 @@ namespace GiocoDell_oca
             turno = !turno;
         }
 
+        private void ModificaStato(Giocatore player)
+        {
+            player.Changestatus();
+        }
 
         private void Creacampo()
         {
